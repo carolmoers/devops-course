@@ -5,8 +5,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.box = "ubuntu-14.04"
     config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
+
     config.vm.network "private_network", ip: "192.168.33.10"
-    config.vm.box_url "forwarded_port", guest: 8080, host: 8088
+    config.vm.network "forwarded_port", guest: 8080, host: 8088
 
     config.vm.define "helloword" do |hb|
     end
